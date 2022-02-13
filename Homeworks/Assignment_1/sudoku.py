@@ -12,32 +12,16 @@ class Stack_frontier_of_stack:
         self.frontier_of_stack = []
 
     def add(self, node):
-        """
-
-        :param node:
-        """
         self.frontier_of_stack.append(node)
 
     def contains_state_of_node(self, state_of_node):
-        """
-        check if node contains the state
-        :param state_of_node:
-        :return:
-        """
         return any((node.state_of_node[0] == state_of_node[0]).all() for node in self.frontier_of_stack)
 
     def is_empty(self):
-        """
-        check tif frontier of stack is empty
-        :return:
-        """
         return len(self.frontier_of_stack) == 0
 
     def remove(self):
-        """
-        if frontier is not empty then removing the nodes
-        :return:
-        """
+        # type: () -> object
         if self.is_empty():
             raise Exception("Empty frontier_of_stack")
         else:
@@ -48,10 +32,6 @@ class Stack_frontier_of_stack:
 
 class Queuefrontier_of_stack(Stack_frontier_of_stack):
     def remove(self):
-        """
-
-        :return:
-        """
         if self.is_empty():
             raise Exception("Empty frontier_of_stack")
         else:
@@ -67,11 +47,7 @@ class PuzzleProblem:
         self.required_result = None
 
     def neighbours_of_node(self, state_of_node):
-        """
-        find the neighbours of the node
-        :param state_of_node:
-        :return:
-        """
+
         matrix_puzzle, (puzzle_row, puzzle_col) = state_of_node
         resultant = []
 
